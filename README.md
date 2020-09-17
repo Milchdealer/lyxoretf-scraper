@@ -8,8 +8,8 @@ pip install -r requirements.txt
 ```
 
 # Usage
-```sh
-$python3 src/main.py -h
+```
+>>> python3 src/main.py -h
 usage: main.py [-h] [--isin_file ISIN_FILE] [--output OUTPUT]
 
 optional arguments:
@@ -18,4 +18,15 @@ optional arguments:
                         Path to file which contains the ISINs to scrape from lyxoretf.de
   --output OUTPUT, -o OUTPUT
                         Where to write the results
+```
+
+# Docker
+You can also just run it via docker.
+
+```sh
+# Build
+docker build -t lyxoretf-scraper .
+
+# Run
+docker run --rm -v `pwd`:/usr/src/app/out -t lyxoretf-scraper
 ```
